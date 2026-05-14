@@ -35,7 +35,8 @@ func main() {
 	// Determine the application environment
 	env := os.Getenv("APP_ENV")
 	if env == "" {
-		env = "development"
+		// Default to "production" to avoid accidentally running dev settings
+		env = "production"
 	}
 
 	log.Printf("Starting WeKnora in [%s] mode", env)
