@@ -52,6 +52,12 @@ func main() {
 		log.Printf("Hostname: %s", hostname)
 	}
 
+	// Personal fork: log the Go working directory at startup to make it easier
+	// to confirm which config files and assets are being picked up.
+	if wd, err := os.Getwd(); err == nil {
+		log.Printf("Working directory: %s", wd)
+	}
+
 	// Initialize and start the HTTP server
 	srv, err := server.New()
 	if err != nil {
