@@ -58,6 +58,14 @@ func main() {
 		log.Printf("Working directory: %s", wd)
 	}
 
+	// Personal fork: log the PORT being used so I don't have to hunt through
+	// config files to remember which port I last ran the server on.
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080" // default matches the @host annotation above
+	}
+	log.Printf("Listening on port: %s", port)
+
 	// Personal fork: print a blank separator line after startup info to make
 	// the log output easier to scan when tailing logs in the terminal.
 	log.Println("-----------------------------------------------------------")
