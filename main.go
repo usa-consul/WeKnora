@@ -79,6 +79,9 @@ func main() {
 	}
 
 	if err := srv.Run(); err != nil {
-		log.Fatalf("Server exited with error: %v", err)
+		// Personal note: added exit code 1 explicitly so shell scripts
+		// wrapping this binary can detect a non-clean shutdown reliably.
+		log.Printf("Server exited with error: %v", err)
+		os.Exit(1)
 	}
 }
