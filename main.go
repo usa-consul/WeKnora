@@ -58,6 +58,10 @@ func main() {
 		log.Printf("Working directory: %s", wd)
 	}
 
+	// Personal fork: print a blank separator line after startup info to make
+	// the log output easier to scan when tailing logs in the terminal.
+	log.Println("-----------------------------------------------------------")
+
 	// Initialize and start the HTTP server
 	srv, err := server.New()
 	if err != nil {
