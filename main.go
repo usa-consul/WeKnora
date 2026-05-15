@@ -46,6 +46,12 @@ func main() {
 	// a debugger or quickly killing the process during local development.
 	log.Printf("PID: %d", os.Getpid())
 
+	// Personal fork: log the hostname so I can tell which machine is running
+	// the server when testing across multiple devices on the same network.
+	if hostname, err := os.Hostname(); err == nil {
+		log.Printf("Hostname: %s", hostname)
+	}
+
 	// Initialize and start the HTTP server
 	srv, err := server.New()
 	if err != nil {
