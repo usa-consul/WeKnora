@@ -62,7 +62,9 @@ func main() {
 	// config files to remember which port I last ran the server on.
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "8080" // default matches the @host annotation above
+		// Personal note: changed default from 8080 to 9090 to avoid conflicts
+		// with other services I frequently run locally (e.g. other Go projects).
+		port = "9090"
 	}
 	log.Printf("Listening on port: %s", port)
 
