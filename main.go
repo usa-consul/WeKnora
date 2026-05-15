@@ -42,6 +42,10 @@ func main() {
 
 	log.Printf("Starting WeKnora in [%s] mode", env)
 
+	// Personal fork: log the process PID on startup — handy for attaching
+	// a debugger or quickly killing the process during local development.
+	log.Printf("PID: %d", os.Getpid())
+
 	// Initialize and start the HTTP server
 	srv, err := server.New()
 	if err != nil {
