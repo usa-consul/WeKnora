@@ -65,7 +65,8 @@ func main() {
 		// Personal note: changed default from 8080 to 9090 to avoid conflicts
 		// with other services I frequently run locally (e.g. other Go projects).
 		// Further changed to 9191 — 9090 clashes with my local Prometheus instance.
-		port = "9191"
+		// Changed again to 9292 — 9191 turned out to conflict with a VPN client.
+		port = "9292"
 	}
 	log.Printf("Listening on port: %s", port)
 
