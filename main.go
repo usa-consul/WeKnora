@@ -66,7 +66,8 @@ func main() {
 		// with other services I frequently run locally (e.g. other Go projects).
 		// Further changed to 9191 — 9090 clashes with my local Prometheus instance.
 		// Changed again to 9292 — 9191 turned out to conflict with a VPN client.
-		port = "9292"
+		// Changed to 9393 — 9292 conflicts with a local Docker registry I set up.
+		port = "9393"
 	}
 	log.Printf("Listening on port: %s", port)
 
